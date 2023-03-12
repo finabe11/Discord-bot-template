@@ -1,14 +1,13 @@
 import discord
 import random
-from discord.net import commands
+from discord.ext import commands
 
-TOKEN = ""
+TOKEN = "MTA4MDk2MDg4NTM2MDY5MzM1OA.GO8o0t.w4MhD1PhH24WMjxXT-Cndf4kBM_CUi7cVRd6NA"
 
 intents = discord.Intents.default()
 intents.message_content = True
 
-client = commands.Bot(command_prefix = "!", intents = intents)
-
+client = commands.Bot(command_prefix = "/", intents = intents)
 
 
 class rng:
