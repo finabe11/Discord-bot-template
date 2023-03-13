@@ -1,15 +1,23 @@
-import discord
+import discord,os
 import random
 from discord.ext import commands
 
-TOKEN = "MTA4MDk2MDg4NTM2MDY5MzM1OA.GO8o0t.w4MhD1PhH24WMjxXT-Cndf4kBM_CUi7cVRd6NA"
+TOKEN = os.environ['token']
 
 intents = discord.Intents.default()
 intents.message_content = True
 
 client = commands.Bot(command_prefix = "/", intents = intents)
 
+@client.event
+async def on_ready():
+  print("Working")
 
+@client.command()
+async def test(ctx):
+  await ctx.send("Welcome")
+
+"""
 class rng:
   def __init__(self):
     self.secret_number = random.randint(0,1000)
@@ -29,7 +37,7 @@ async def guess(ctx,num):
   else:
     await ctx.channel.send("Guess Higher")
 
-
+"""
 
 
 
